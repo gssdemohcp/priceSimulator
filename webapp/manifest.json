@@ -1,0 +1,153 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "com.sd.price.sim",
+		"type": "application",
+		"resources": "resources.json",
+		"i18n": "i18n/messageBundle.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"ach": "ach",
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/ZSD_PRICE_SIMULATOR_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"offline": true,
+		"sourceTemplate": {
+			"id": "fioritemplate.UI5masterDetailKapselOffline",
+			"version": "1.32.4"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "com.sd.price.sim.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.sd.price.sim.i18n.messageBundle"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "com.sd.price.sim.MyRouter",
+				"viewType": "XML",
+				"viewPath": "com.sd.price.sim.view",
+				"targetAggregation": "detailPages",
+				"clearTarget": false
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "main",
+					"view": "Master",
+					"targetAggregation": "masterPages",
+					"targetControl": "idAppControl",
+					"viewLevel": 1,
+					"subroutes": [
+						{
+							"pattern": "{entity}/:tab:",
+							"viewLevel": 2,
+							"name": "detail",
+							"view": "Detail"
+						}
+					]
+				},
+				{
+					"pattern": "Simulation/Simulation/Simulation",
+					"name": "Simulation",
+					"viewLevel": 3,
+					"view": "Simulation",
+					"targetControl": "idAppControl"
+				},
+				{
+					"name": "catchallMaster",
+					"view": "Master",
+					"targetAggregation": "masterPages",
+					"targetControl": "idAppControl",
+					"subroutes": [
+						{
+							"pattern": ":all*:",
+							"name": "catchallDetail",
+							"view": "NotFound",
+							"transition": "show"
+						}
+					]
+				}
+			]
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.mobile": {
+		"_version": "1.1.0",
+		"definingRequests": {
+			"CustomersSet": {
+				"dataSource": "mainService",
+				"path": "/CustomersSet?$expand=MaterialsCostsSet"
+			},
+			"ConfigurationsSet": {
+				"dataSource": "mainService",
+				"path": "/ConfigurationsSet"
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zpricesimlator/webapp",
+		"_version": "1.1.0"
+	}
+}

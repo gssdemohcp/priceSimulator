@@ -1,0 +1,66 @@
+{
+  "run": [
+    {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "runnerId": "webapprunner",
+        "id": 5869462,
+        "displayName": "Run index.html 2",
+        "lastRunTimeStamp": 1514470778575
+      }
+    },
+    {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 972164,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html",
+        "lastRunTimeStamp": 1483545409573,
+        "hasIssues": true
+      }
+    },
+    {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": "1.42.8",
+      "ui5VerSource": null,
+      "isDefaultVersion": 1,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [
+        {
+          "source": "EDV",
+          "destinations": "EDV"
+        }
+      ],
+      "urlParametersNotNeeded": false,
+      "_metadata": {
+        "id": 5272926,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html 1",
+        "lastRunTimeStamp": 1483545122620,
+        "hasIssues": true
+      }
+    }
+  ]
+}

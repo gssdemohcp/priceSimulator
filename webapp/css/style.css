@@ -1,0 +1,54 @@
+.spacerTop {
+    margin-top: 2rem;
+}
+
+.iconBarNoSpacce .sapMITBContent {
+    display: none;
+}
+
+.iconBarNoSpacce .sapMITBHead {
+    margin-top: 0.35rem;
+}
+
+.iconBarNoSpacce .sapMITBVertical.sapMITBFilter > .sapMITBText + .sapMITBContentArrow {
+    height: 0.2875rem;
+}
+
+.calculatedFields {
+    font-size: 1.075rem;
+}
+
+.calculatedFieldsText {
+    font-weight: bold;
+    color: #666666;
+}
+
+html.sap-phone .sapMCustomTile,
+.sapMCustomTile {
+    width: 8rem;
+    height: 5rem;
+    border: 2px solid #b8b6b8;
+}
+
+.formBotton .sapUiFormResGridCont,
+.sap-phone .formBotton .sapUiFormResGridCont {
+    padding-bottom: 0;
+}
+
+.simpleFormSimPad .sapUiFormResGrid>div {
+    padding-top: 0;
+    padding-bottom: 0rem;
+}
+
+.simpleFormSimPadTop .sapUiFormResGrid>div {
+    padding-top: 0.5rem;
+}
+
+.customPanel .sapMPanelContent {
+    padding: 0 0 0 0;
+}
+
+.inputMariginChange {
+    margin-right: 0.1rem;
+    margin-left: 0.4rem;
+}

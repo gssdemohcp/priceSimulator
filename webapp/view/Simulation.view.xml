@@ -1,0 +1,106 @@
+<mvc:View controllerName="com.sd.price.sim.controller.Simulation" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Page id="simulationPage" showNavButton="true" navButtonPress="onNavBack" title="{i18n>simulationTitle}">
+		<ObjectHeader id="oh1" responsive="true" fullScreenOptimized="true" intro="{simulationModel>/Matnr}" title="{simulationModel>/Maktx}"
+			number="{simulationModel>/stPrice}" numberUnit="{simulationModel>/FwaerKpf}">
+			<attributes>
+				<ObjectAttribute text="Customer: {simulationModel>/Name1}"/>
+				<ObjectAttribute text="Market: {simulationModel>/Description}"/>
+			</attributes>
+		</ObjectHeader>
+		<!-- Original Data -->
+		<core:Fragment fragmentName="com.sd.price.sim.view.SimulationOrignal" type="XML"/>
+		<!-- Simulation Data -->
+		<Panel expandable="false" expanded="true" width="auto" backgroundDesign="Solid" class="customPanel">
+			<headerToolbar>
+				<Toolbar>
+					<Title text="Simulation"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://settings" press="handleCustSettings"/>
+				</Toolbar>
+			</headerToolbar>
+			<!-- Margin Calculation -->
+			<f:SimpleForm maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="5" labelSpanM="4" labelSpanS="4" columnsL="1"
+				columnsM="1" class="simpleFormSimPad sapUiSmallMarginTop">
+				<f:content>
+					<Label design="Bold" text="Margin"/>
+					<Text class="calculatedFieldsText" textAlign="Right" width="9.35rem"
+						text=" {path: 'simData>/margin', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }} %"></Text>
+					<Label design="Bold" text="Shelf Price"/>
+					<Text class="calculatedFieldsText" textAlign="Right" width="10.5rem"
+						text=" {path: 'simData>/shelfPrice', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }} {simulationModel>/FwaerKpf}"/>
+				</f:content>
+			</f:SimpleForm>
+			<f:SimpleForm maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="5" labelSpanM="4" labelSpanS="4" columnsL="1"
+				columnsM="1" class="simpleFormSimPad sapUiSmallMarginTop">
+				<f:content>
+					<Label text="FOB Cost"/>
+					<HBox>
+						<items>
+							<Button type="Reject" id="dFobButn" icon="sap-icon://sys-minus" width="2.2rem" press="onFobPressDown"></Button>
+							<Input id="inputPrFob" class="inputMariginChange" textAlign="Right"
+								value="{path: 'simData>/Fob', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"
+								width="6.5rem" submit="onFobSubmit"></Input>
+							<Button type="Accept" id="uFobButn" icon="sap-icon://sys-add" width="2.2rem" press="onFobPressUp"></Button>
+						</items>
+					</HBox>
+					<Label text="Sales Price"/>
+					<HBox>
+						<items>
+							<Button type="Reject" id="dSpButn" icon="sap-icon://sys-minus" width="2.2rem" press="onSpPressDown"></Button>
+							<Input class="inputMariginChange" id="inputPrSales" textAlign="Right"
+								value="{path: 'simData>/Kbetr', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"
+								width="6.5rem" submit="onSpSubmit"></Input>
+							<Button type="Accept" id="uSpButn" icon="sap-icon://sys-add" width="2.2rem" press="onSpPressUp"></Button>
+						</items>
+					</HBox>
+					<Label text="Cust GP %"/>
+					<HBox>
+						<items>
+							<Button type="Reject" id="dCGPButn" icon="sap-icon://sys-minus" width="2.2rem" press="onCGPPressDown"></Button>
+							<Input class="inputMariginChange" id="inputPr" textAlign="Right"
+								value="{path: 'simData>/custGP', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"
+								width="6.5rem" submit="onCustGPSumbit"></Input>
+							<Button type="Accept" id="uCGPButn" icon="sap-icon://sys-add" width="2.2rem" press="onCGPPressUp"></Button>
+						</items>
+					</HBox>
+					<Label visible="{= ${simData>/FwaerKpf} !== ${simData>/Hwaer} ? true : false }" text="Sales Price"/>
+					<Text visible="{= ${simData>/FwaerKpf} !== ${simData>/Hwaer} ? true : false }" textAlign="Right" width="10.5rem"
+						text="{path: 'simData>/salesPriceConv', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }} {simData>/Hwaer}"></Text>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<Panel expandable="false" headerText="Simulated Costs" expanded="true" width="auto" backgroundDesign="Solid" class="formBotton">
+			<!-- Additional Data -->
+			<f:SimpleForm maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanS="6" labelSpanM="6" labelSpanL="6"
+				class="simpleFormSimPad">
+				<f:content>
+					<Label text="Freight"/>
+					<Text width="8.5rem"
+						text="{path: 'simData>/Freight', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"></Text>
+					<Label text="Overhead"/>
+					<Text width="8.5rem"
+						text="{path: 'simData>/Overhead', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"></Text>
+					<Label text="Custom Fees"/>
+					<Text width="8.5rem"
+						text="{path: 'simData>/CustomFees', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"></Text>
+					<Label text="Custom Duty"/>
+					<Text width="8.5rem"
+						text="{path: 'simData>/CustomDuty', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"></Text>
+					<Label text="Standard Cost"/>
+					<Text width="8.5rem"
+						text="{path: 'simData>/StandardCost', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits : 2, maxFractionDigits: 2 }}"></Text>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button press="handleSendMail" icon="sap-icon://email" tooltip="Send Mail"></Button>
+					<Button press="handleReset" type="Reject" icon="sap-icon://reset" tooltip="Reset"></Button>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

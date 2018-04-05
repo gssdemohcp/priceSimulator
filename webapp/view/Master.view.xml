@@ -1,0 +1,64 @@
+<mvc:View controllerName="com.sd.price.sim.controller.Master" displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page id="page" title="{i18n>masterTitle}">
+		<headerContent>
+			<core:Icon id="masterIcon" src="sap-icon://alert" visible="{device>/isOffline}"></core:Icon>
+		</headerContent>
+		<content>
+			<VBox>
+				<items>
+					<IconTabBar expandable="false" id="idIconTabBarNoIcons" class="iconBarNoSpacce" select="onIconSelect">
+						<items>
+							<IconTabFilter key="Fav" icon="sap-icon://favorite-list" iconColor="Critical" text="Favorities"></IconTabFilter>
+							<IconTabFilter key="All" icon="sap-icon://group" iconColor="Positive" text="All Customers"></IconTabFilter>
+						</items>
+					</IconTabBar>
+					<SearchField id="searchField" showRefreshButton="{device>/isNoTouch}" placeholder="{i18n>masterSearchPlaceholder}" search="onSearch"
+						tooltip="{i18n>masterSearchTooltip}"></SearchField>
+				</items>
+			</VBox>
+			<!--<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>-->
+			<!-- For client side filtering add this to the items attribute:  parameters: {operationMode: 'Client'}}" -->
+			<List id="list" items="{ path: '/CustomersSet', sorter : { path : 'Pkunag' }, parameters: { expand: 'MaterialsCostsSet'}}"
+				busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}" mode="{device>/listMode}" growing="true"
+				growingScrollToLoad="true" select="onSelect">
+				<items>
+					<CustomListItem type="{device>/listItemType}" press="onSelect">
+						<content>
+							<VBox class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiSmallMarginBeginEnd">
+								<items>
+									<HBox class="sapUiTinyMarginBottom">
+										<items>
+											<HBox width="50%">
+												<items>
+													<Label text="{Pkunag}" design="Bold"/>
+												</items>
+											</HBox>
+											<HBox width="50%" justifyContent="End">
+												<items>
+													<Label width="100%" text="{Ort01}" textAlign="End"/>
+												</items>
+											</HBox>
+										</items>
+									</HBox>
+									<Label text="{Name1}"/>
+								</items>
+							</VBox>
+						</content>
+					</CustomListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<Button icon="sap-icon://error" text="{device>/errorNum}" visible="{parts:[{path:'device>/errorNum'}], formatter:'.onErrorBTVisible'}"
+						press="onErrorPress"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://refresh" press="refreshData"></Button>
+					<!--<Button icon="sap-icon://add" press="addItem"></Button>-->
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

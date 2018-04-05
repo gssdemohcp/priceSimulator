@@ -1,0 +1,13 @@
+[{
+	"Matnr": "Mat-001",
+	"StandardCost": 15,
+	"Maktx": "Test Material",
+	"Pkunag": "12",
+	"Fob": 10,
+	"Freight": 1,
+	"Overhead": 1,
+	"CustomFees": 1,
+	"Others": 1,
+	"CustomDuty": 1,
+	"Kbetr": 20
+}]

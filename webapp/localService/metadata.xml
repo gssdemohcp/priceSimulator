@@ -1,0 +1,119 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSD_PRICE_SIMULATOR_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="MaterialsCosts" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Matnr"/>
+					<PropertyRef Name="Pkunag"/>
+					<PropertyRef Name="Market"/>
+				</Key>
+				<Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StandardCost" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Pkunag" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Customer" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Market" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Markets" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Market Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Losgr" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unit="Meins" sap:label="Cstg Lot Size"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Valuation Unit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+				<Property Name="Fob" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Freight" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Overhead" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Others" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CustomFees" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CustomDuty" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DutyRate" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unit="Hwaer" sap:label="Cost Field"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Hwaer" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Local Currency" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+				<Property Name="FwaerKpf" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+				<Property Name="ExchRate" Type="Edm.Decimal" Nullable="false" Precision="9" Scale="5" sap:label="Dir. quot.exch.rate" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Kbetr" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unit="Hwaer" sap:label="Amount"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CustGp" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Customer GP- Initial Value will be sent"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="Customers" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Pkunag"/>
+				</Key>
+				<Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Name" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Pkunag" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Customer" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Country" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Ort01" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="City" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Regio" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Region" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Stras" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Street" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Telf1" Type="Edm.String" Nullable="false" MaxLength="16" sap:label="Telephone 1" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="FavCust" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Favorite Customers" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<NavigationProperty Name="MaterialsCostsSet" Relationship="ZSD_PRICE_SIMULATOR_SRV.CustomerMaterialCosts"
+					FromRole="FromRole_CustomerMaterialCosts" ToRole="ToRole_CustomerMaterialCosts"/>
+			</EntityType>
+			<EntityType Name="Configurations" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Name"/>
+				</Key>
+				<Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Configuaration Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Configuaration Value" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Configuaration Desc" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<Association Name="CustomerMaterialCosts" sap:content-version="1">
+				<End Type="ZSD_PRICE_SIMULATOR_SRV.Customers" Multiplicity="0..1" Role="FromRole_CustomerMaterialCosts"/>
+				<End Type="ZSD_PRICE_SIMULATOR_SRV.MaterialsCosts" Multiplicity="*" Role="ToRole_CustomerMaterialCosts"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CustomerMaterialCosts">
+						<PropertyRef Name="Pkunag"/>
+					</Principal>
+					<Dependent Role="ToRole_CustomerMaterialCosts">
+						<PropertyRef Name="Pkunag"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZSD_PRICE_SIMULATOR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="MaterialsCostsSet" EntityType="ZSD_PRICE_SIMULATOR_SRV.MaterialsCosts" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="CustomersSet" EntityType="ZSD_PRICE_SIMULATOR_SRV.Customers" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="ConfigurationsSet" EntityType="ZSD_PRICE_SIMULATOR_SRV.Configurations" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="CustomerMaterialCostsSet" Association="ZSD_PRICE_SIMULATOR_SRV.CustomerMaterialCosts" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="CustomersSet" Role="FromRole_CustomerMaterialCosts"/>
+					<End EntitySet="MaterialsCostsSet" Role="ToRole_CustomerMaterialCosts"/>
+				</AssociationSet>
+			</EntityContainer>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="http://ews615.conair.lan:8000/sap/opu/odata/sap/ZSD_PRICE_SIMULATOR_SRV/$metadata"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="http://ews615.conair.lan:8000/sap/opu/odata/sap/ZSD_PRICE_SIMULATOR_SRV/$metadata"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

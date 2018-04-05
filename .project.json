@@ -1,0 +1,378 @@
+{
+  "generation": [
+    {
+      "templateId": "fioritemplate.UI5masterDetailKapselOffline",
+      "templateVersion": "1.32.4",
+      "dateTimeStamp": "Wed, 23 Nov 2016 19:36:43 GMT"
+    }
+  ],
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZSD_PRICE_SIMULATOR_SRV/",
+    "metadataFilePath": "localService/metadata.xml",
+    "loadJSONFiles": true,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "projectType": [
+    "com.sap.webide.hybrid.cordova",
+    "sap.watt.uitools.ide.fiori"
+  ],
+  "hybrid": {
+    "appname": "Price Simulator",
+    "appid": "com.sd.price.sim",
+    "appdesc": "Price Simulator",
+    "appversion": "1.0.0",
+    "debugMode": false,
+    "appIcon": {
+      "defaultIcon": "",
+      "defaultIconData": "",
+      "ios": {
+        "ios8Iphone": "res/Icon-App-76x76@2x.png",
+        "ios7Iphone": "res/Icon-App-60x60@1x.png",
+        "ios7Ipad": "res/Icon-App-76x76@1x.png",
+        "ios61Iphone": "res/Icon-App-57x57@1x.png",
+        "ios61Ipad": "res/Icon-App-72x72@1x.png",
+        "ios7Iphone2x": "res/Icon-App-60x60@2x.png",
+        "ios7Ipad2x": "res/Icon-App-76x76@2x.png",
+        "ios61Ipad2x": "res/Icon-App-72x72@2x.png",
+        "ios61Iphone2x": "res/Icon-App-72x72@2x.png"
+      },
+      "android": {
+        "ldpi": "res/ldpi.png",
+        "mdpi": "res/mdpi.png",
+        "hdpi": "res/hdpi.png",
+        "xhdpi": "res/xhdpi.png"
+      },
+      "windows": {
+        "s44": "",
+        "s71": "",
+        "s106": "",
+        "s150": "",
+        "s50": "",
+        "w310": ""
+      },
+      "windows10": {
+        "s44": "",
+        "s71": "",
+        "s106": "",
+        "s150": "",
+        "s50": "",
+        "w310": ""
+      }
+    },
+    "appSplash": {
+      "enable": true,
+      "defaultLandscapeSplash": "",
+      "defaultLSplashData": "",
+      "defaultPortraitSplash": "",
+      "defaultPSplashData": "",
+      "delayTime": "1000",
+      "ios": {
+        "iphone": "",
+        "iphone2x": "",
+        "portIpad": "",
+        "portIpad2x": "",
+        "landIpad": "",
+        "landIpad2x": "",
+        "iphone52x": "",
+        "iphone6": "",
+        "iphone6plus": ""
+      },
+      "android": {
+        "landhdpi": "res/splash-land-hdpi.png",
+        "porthdpi": "res/splash-port-hdpi.png",
+        "landldpi": "res/splash-land-ldpi.png",
+        "portldpi": "res/splash-port-ldpi.png",
+        "landmdpi": "res/splash-land-mdpi.png",
+        "portmdpi": "res/splash-port-mdpi.png",
+        "landxhdpi": "res/splash-land-xhdpi.png",
+        "portxhdpi": "res/splash-port-xhdpi.png"
+      },
+      "windows": {
+        "s100": "",
+        "s140": "",
+        "s240": ""
+      },
+      "windows10": {
+        "s100": "",
+        "s140": "",
+        "s240": ""
+      }
+    },
+    "kapselLogon": {
+      "type": "",
+      "logo": "",
+      "logoText": "",
+      "background": "",
+      "disablePasscode": false,
+      "hideLogoCopyright": false
+    },
+    "useAppDescriptor4UI5Libs": false,
+    "localBuild": {
+      "useCustomLib": false,
+      "customLibFile": ""
+    },
+    "cloudBuild": {
+      "androidSigning": "",
+      "iosSigning": "",
+      "clearCache": false,
+      "tiles": "single",
+      "applications": []
+    },
+    "msType": 1,
+    "server": "ews608.conair.lan",
+    "port": "8080",
+    "hcpmsServer": "mobile-d7932eb72.us2.hana.ondemand.com",
+    "hybridRevision": "1",
+    "mime": {
+      "path": "",
+      "root": ""
+    },
+    "platform": {
+      "ios": {
+        "selected": false,
+        "preferences": {
+          "Fullscreen": false,
+          "Orientation": "all",
+          "EnableViewportScale": false,
+          "UrlScheme": ""
+        }
+      },
+      "android": {
+        "selected": true,
+        "preferences": {
+          "Fullscreen": false,
+          "Orientation": "default",
+          "ShowTitle": false,
+          "LogLevel": "VERBOSE",
+          "LoadUrlTimeout": "80000",
+          "UrlScheme": ""
+        }
+      },
+      "windows": {
+        "selected": false,
+        "preferences": {
+          "Fullscreen": false,
+          "Orientation": "default",
+          "ShowTitle": false,
+          "LogLevel": ""
+        },
+        "preferencesWin10": {
+          "Fullscreen": false,
+          "Orientation": "default",
+          "ShowTitle": false,
+          "LogLevel": ""
+        }
+      }
+    },
+    "plugins": {
+      "cordova": {
+        "device": {
+          "selected": true,
+          "registry": "cordova-plugin-device",
+          "localBuild": true
+        },
+        "network": {
+          "selected": true,
+          "registry": "cordova-plugin-network-information",
+          "localBuild": true
+        },
+        "battery": {
+          "selected": false,
+          "registry": "cordova-plugin-battery-status",
+          "localBuild": true
+        },
+        "accelerometer": {
+          "selected": false,
+          "registry": "cordova-plugin-device-motion",
+          "localBuild": true
+        },
+        "compass": {
+          "selected": false,
+          "registry": "cordova-plugin-device-orientation",
+          "localBuild": true
+        },
+        "geolocation": {
+          "selected": false,
+          "registry": "cordova-plugin-geolocation",
+          "localBuild": true
+        },
+        "camera": {
+          "selected": false,
+          "registry": "cordova-plugin-camera",
+          "localBuild": true
+        },
+        "capture": {
+          "selected": false,
+          "registry": "cordova-plugin-media-capture",
+          "localBuild": true
+        },
+        "media": {
+          "selected": false,
+          "registry": "cordova-plugin-media",
+          "localBuild": true
+        },
+        "file": {
+          "selected": false,
+          "registry": "cordova-plugin-file",
+          "localBuild": true
+        },
+        "transfer": {
+          "selected": false,
+          "registry": "cordova-plugin-file-transfer",
+          "localBuild": true
+        },
+        "dialogs": {
+          "selected": false,
+          "registry": "cordova-plugin-dialogs",
+          "localBuild": true
+        },
+        "vibration": {
+          "selected": true,
+          "registry": "cordova-plugin-vibration",
+          "localBuild": true
+        },
+        "contacts": {
+          "selected": false,
+          "registry": "cordova-plugin-contacts",
+          "localBuild": true
+        },
+        "globalization": {
+          "selected": false,
+          "registry": "cordova-plugin-globalization",
+          "localBuild": true
+        },
+        "splashscreen": {
+          "selected": true,
+          "registry": "cordova-plugin-splashscreen",
+          "localBuild": true
+        },
+        "inappbrowser": {
+          "selected": false,
+          "registry": "cordova-plugin-inappbrowser",
+          "localBuild": true
+        },
+        "console": {
+          "selected": false,
+          "registry": "cordova-plugin-console",
+          "localBuild": true
+        },
+        "statusbar": {
+          "selected": false,
+          "registry": "cordova-plugin-statusbar",
+          "localBuild": true
+        }
+      },
+      "kapsel": {
+        "logon": {
+          "selected": true,
+          "registry": "kapsel-plugin-logon",
+          "localBuild": true
+        },
+        "appupdate": {
+          "selected": true,
+          "registry": "kapsel-plugin-appupdate",
+          "localBuild": true
+        },
+        "logger": {
+          "selected": false,
+          "registry": "kapsel-plugin-logger",
+          "localBuild": true
+        },
+        "settings": {
+          "selected": false,
+          "registry": "kapsel-plugin-settings",
+          "localBuild": true
+        },
+        "push": {
+          "selected": false,
+          "registry": "kapsel-plugin-push",
+          "localBuild": true
+        },
+        "encryptedstorage": {
+          "selected": false,
+          "registry": "kapsel-plugin-encryptedstorage",
+          "localBuild": true
+        },
+        "authproxy": {
+          "selected": false,
+          "registry": "kapsel-plugin-authproxy",
+          "localBuild": true
+        },
+        "barcode": {
+          "selected": false,
+          "registry": "kapsel-plugin-barcodescanner",
+          "localBuild": true
+        },
+        "odata": {
+          "selected": true,
+          "registry": "kapsel-plugin-odata",
+          "localBuild": true
+        },
+        "e2etrace": {
+          "selected": false,
+          "registry": "kapsel-plugin-e2etrace",
+          "localBuild": true
+        },
+        "calendar": {
+          "selected": false,
+          "registry": "nl.x-services.plugins.calendar",
+          "localBuild": true
+        },
+        "voicerecord": {
+          "selected": false,
+          "registry": "kapsel-plugin-voicerecording",
+          "localBuild": true
+        },
+        "attachmentviewer": {
+          "selected": false,
+          "registry": "kapsel-plugin-attachmentviewer",
+          "localBuild": true
+        },
+        "printer": {
+          "selected": false,
+          "registry": "de.appplant.cordova.plugin.printer",
+          "localBuild": true
+        }
+      },
+      "custom": {}
+    },
+    "FacadeConfig": {
+      "cordova-plugin-device-orientation": false,
+      "accelerometer": {},
+      "compass": {},
+      "bFacade": false,
+      "bMockLocation": true,
+      "position": {
+        "latitude": 1.2748848,
+        "longitude": 103.7973789
+      },
+      "locations": []
+    }
+  },
+  "performancetoolkit.runner": {
+    "e2eDuration": {
+      "error": 999999,
+      "warning": 999999
+    },
+    "roundTrips": {
+      "error": 4,
+      "warning": 2
+    },
+    "backendRequests": {
+      "error": 4,
+      "warning": 2
+    }
+  },
+  "deploy": {
+    "destination": "EDV",
+    "name": "ZPRICESIMLATOR"
+  }
+}

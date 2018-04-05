@@ -1,0 +1,76 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog id="dialogBox" title="{i18n>simCust}" type="Message">
+		<content>
+			<VBox>
+				<f:Form minWidth="1024" maxContainerCols="1" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout backgroundDesign="Transparent" labelSpanL="3" labelSpanM="4" labelSpanS="12" emptySpanL="4" emptySpanM="4"
+							columnsL="1" columnsM="1"/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:title>
+								<core:Title text="{i18n>IncDec}"></core:Title>
+							</f:title>
+							<f:formElements>
+								<f:FormElement label="FOB Inc.">
+									<f:fields>
+										<Input value="{simConfig>/FOBInc}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="FOB Dec.">
+									<f:fields>
+										<Input value="{simConfig>/FOBDec}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Sales Price Inc.">
+									<f:fields>
+										<Input value="{simConfig>/SPInc}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Sales Price Dec.">
+									<f:fields>
+										<Input value="{simConfig>/SPDec}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Cust GP Inc.">
+									<f:fields>
+										<Input value="{simConfig>/CGInc}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Cust GP Dec.">
+									<f:fields>
+										<Input value="{simConfig>/CGDec}"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+						<f:FormContainer>
+							<f:title>
+								<core:Title text="{i18n>speedSettings}"></core:Title>
+							</f:title>
+							<f:formElements>
+								<f:FormElement label="Increment Speed">
+									<f:fields>
+										<Input value="{simConfig>/IncSpeed}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Decrement Speed">
+									<f:fields>
+										<Input value="{simConfig>/DecSpeed}"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="Save" type="Accept" press="onSimCustSave"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" type="Reject" press="onSimCustCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,8 @@
+{
+	"logon": true,
+	"host": "ews608.conair.lan",
+	"port": "8080",
+	"https": "false",
+	"appID": "com.sd.price.sim",
+	"network": true
+}
